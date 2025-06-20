@@ -1,0 +1,57 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<div class="row">
+    <div class="col-8 offset-2">
+<br><br>
+    <h3>Create a New listing</h3>
+    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div>
+            <label for="title" class="form-label">Enter Title</label>
+            <input name="listing[title]" placeholder="Enter name of the PG" type="text" class="form-control" required></input>
+            <div class="valid-feedback">Title looks good!</div>
+        </div>
+       <div>
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required></textarea>
+       </div>
+    
+       
+       <!-- <div>
+        <label for="image" class="form-label" class="form-label">Image link</label>
+        <input name="listing[Image]" placeholder="Enter Image URL"  type="text" class="form-control" ></input>
+       </div> -->
+
+        <div class="mb-3">
+        <label for="image" class="form-label" class="form-label">Upload Image</label>
+        <input name="listing[Image]" type="file" class="form-control"  required></input>
+        
+       </div>
+       <div class="row">
+        <div class="mb-3 col-md-4 ">
+            <label for="price" class="form-label">Price</label>
+           <input name="listing[price]" type="number" class="form-control" required min="0.01" step="0.01">
+<div class="invalid-feedback">Price must be a positive number</div>
+
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" placeholder="Beside BMSCE Bull Temple Road" type="text" class="form-control" required></input>
+            <div class="invalid-feedback">Please Enter Location/Address</div>
+
+        </div>
+       </div>
+      
+        <div>
+            <label for="College" class="form-label">Nearest College</label>
+            <input name="listing[Near College]" placeholder="BMSCE" type="text" class="form-control" required></input>
+            <div class="invalid-feedback">Please Enter College Name</div>
+
+        </div>
+       
+       
+     
+        <br><br>
+        <button class="btn btn-dark add-btn">Add   PG</button><br>
+        <br>
+    </form>
+</div>
+</div>
